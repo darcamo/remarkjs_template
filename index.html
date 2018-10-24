@@ -57,9 +57,13 @@
         <!-- TOOD: procure por remark pull-left -> veja em https://github.com/gnab/remark/issues/409 -->
 
         <!-- TODO: veja classes extras em https://github.com/ttskch/remarkbase -->
-
+        <!-- TODO: Add javascript code that show a small text on code blocks when hovered saying "click to copy" and that does that on click
+             See https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+             See https://stackoverflow.com/questions/49110041/how-can-i-copy-pre-tag-code-into-clipboard-in-html?rq=1
+        -->
 
         <script src="js/mycharts.js"></script>
+        <script src="draws/draw.js"></script>
 
         <script>
          // Macro to generate the colored box -> It receives 3 arguments, the classes
@@ -155,7 +159,7 @@
         <script>
          // Find an element with the #qrcode id and replace it with the a QR code
          function prepare_qr_code() {
-             var element = document.getElementById("qrcode")
+             var element = document.getElementById("qrcode");
              if (element !== null) {
                  var url = element.textContent;
                  element.textContent = "";
@@ -196,12 +200,35 @@
          // You can also store the index of the previous slide if you need that
          // for some transition
          slideshow.on('showSlide', function (slide) {
-             console.log(slide.properties["name"]);
-             console.log(slide.getSlideIndex()); // Slide is the slide being navigated to
+             let slideName = slide.properties["name"]
+             //console.log(slideName);
+             //console.log(slide.getSlideIndex()); // Slide is the slide being navigated to
+
+             if (slideName === "more-animations-2") {
+                 console.log("Yahooo more-animations-2");
+             }
+
+             if (slideName === "more-animations-3") {
+                 console.log("We arrived in the slide with animation");
+             }
          });
 
          // Other events you can use are: hideSlide, beforeShowSlide,
          // afterShowSlide, beforeHideSlide, and afterHideSlide
+        </script>
+
+
+        <script>
+         document.addEventListener('keypress', (event) => {
+             const keyName = event.key;
+
+             if (getCurrentSlideName() === "more-animations-3") {
+                 //slideshow.pause();
+                 updateBlock(event);
+             }
+             //slideshow
+             //alert('keypress event\n\n' + 'key: ' + keyName);
+         });
         </script>
     </body>
 </html>

@@ -414,37 +414,36 @@ class: dontanimate
 ---
 name: more-animations-1
 
-# More animations
+# JavaScript animations on specific slides
 
 [//]: # (.animated.slideInDown[)
 [//]: # (bla bla bla)
 [//]: # (])
 
-
 - If you need to animated something with JavaScript, you can name each slide and
 then use the `showSlide` event to test for a specific name and call the
 JavaScript code
+  - This slide has name `more-animations-1`
+  - When you name a slide, the slide DOM element gets its id attribute set to slide-<name>
 --
 
-name: more-animations2
+name: more-animations-2
 - Notice that you can give a name property to each individual slide step
+  - This step has the name `more-animations-2` and a log message saying "Yahooo more-animations-2" is sent only on this step
 --
 
-name: more-animations3
-- After this step there are more steps without any new code, but with a different
-name property that can be used to update a draw.
---
+name: more-animations-3
 
-name: more-animations4
---
+<div style="background-color: rgb(230, 230, 230); width: calc(200px); border: 4px solid purple;">
+<div id="square" style="width: 100px; height: 100px; background-color: red; position: relative; transition: transform 0.8s;" onkeypress="logkey(event);"></div>
+<div id="animationStep" style="font-size: 75%; float:right; margin-top: 4px;"></div>
+</div>
 
-name: more-animations5
---
+- In this step we added a square that will be moved with javascript.
 
-name: more-animations6
-
-> Some more text in a quote
-> bla bla bla
+  In the `showSlide` event for this step we capture the left/right arrow
+  keypress events for the square movement. When the in the end of the movement
+  we reenable the events in remarkjs
 
 ---
 
