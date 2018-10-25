@@ -2,16 +2,6 @@
 "use strict";
 
 
-function logkey(event) {
-    console.log(event);
-}
-
-function getCurrentSlideName() {
-    return slideshow.getSlides()[slideshow.getCurrentSlideIndex()].properties["name"];
-}
-
-
-
 function updateAnimationStepLabel(idx) {
     let label = document.getElementById("animationStep");
     label.innerText = "Animation Step: " + idx;
@@ -24,37 +14,41 @@ function updateBlock(event) {
     // We will give remark back the control in the end of the animation
     slideshow.pause();
 
+    console.log(event.code);
+
     let square = document.getElementById("square");
-    square.horizontalShift = square.horizontalShift || 0;
 
-    var nextSlideShortcutCodes = ["Space", "ArrowDown", "ArrowRight", "KeyJ", "PageDown"];
-    var previousSlideShortcutCodes = ["ArrowUp", "ArrowLeft", "KeyK", "PageUp"];
+    const nextSlideShortcutCodes = ["Space", "ArrowDown", "ArrowRight", "KeyJ", "PageDown"];
+    const previousSlideShortcutCodes = ["ArrowUp", "ArrowLeft", "KeyK", "PageUp"];
 
-    if (nextSlideShortcutCodes.includes(event.code)) {
+    let keyName = event.code;
+    let horizontalShift;
+
+    if (nextSlideShortcutCodes.includes(keyName)) {
         if(step === undefined) { step = -1; }
         step += 1;
 
         if (step > 5) {
             slideshow.resume();
-            slideshow.gotoNextSlide();
+            // slideshow.gotoNextSlide();
             step = undefined;
         } else {
-            square.horizontalShift = step * 20;
+            horizontalShift = step * 20;
             updateAnimationStepLabel(step);
         }
 
-    } else if (previousSlideShortcutCodes.includes(event.code)) {
+    } else if (previousSlideShortcutCodes.includes(keyName)) {
         if (step === undefined) { step = 6; }
         step -= 1;
 
         if (step < 0) {
             slideshow.resume();
-            slideshow.gotoPreviousSlide();
+            // slideshow.gotoPreviousSlide();
             step = undefined;
         } else {
-            square.horizontalShift = step * 20;
+            horizontalShift = step * 20;
             updateAnimationStepLabel(step);
         }
     }
-    square.style.transform = "translateX(SHIFTXpx)".replace("SHIFTX", square.horizontalShift);
+    square.style.transform = "translateX(SHIFTXpx)".replace("SHIFTX", horizontalShift);
 }

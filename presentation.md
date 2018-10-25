@@ -30,9 +30,7 @@ October 18, 2018
 
 # Agenda
 
-1. Introduction
-2. Deep-dive
-3. ...
+![:toc 2, 20]
 
 ---
 
@@ -435,7 +433,7 @@ name: more-animations-2
 name: more-animations-3
 
 <div style="background-color: rgb(230, 230, 230); width: calc(200px); border: 4px solid purple;">
-<div id="square" style="width: 100px; height: 100px; background-color: red; position: relative; transition: transform 0.8s;" onkeypress="logkey(event);"></div>
+<div id="square" style="width: 100px; height: 100px; background-color: red; position: relative; transition: transform 0.8s;"></div>
 <div id="animationStep" style="font-size: 75%; float:right; margin-top: 4px;"></div>
 </div>
 
@@ -464,8 +462,12 @@ This text has a clear-both class and will definitely not be around the squares]
 name: chartslide
 # A chart example
 
-<div class="chart-container" style="width:80%; height: 500px; margin: 50px auto;">
-<canvas id="myChart" width="400px" height="500px"></canvas>
+- Notice that the chart is interactive ➤ Try clicking the lagend
+  - You could also add more interaction such as new data appearing and updating
+    the line, for instance
+
+<div class="chart-container" style="width:80%; height: 400px; margin: 50px auto;">
+<canvas id="myChart"></canvas>
 </div>
 
 
@@ -475,6 +477,10 @@ name: chartslide
 
 Some other elements with css are:
 - kbd: <kbd>Ctrl</kbd> <kbd>y</kbd>
+- Blockquote:
+  > Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
+  > -- <cite>Albert Einstein</cite>
+
 
 ---
 class: middle, center, hide-slide-number, hide-logo
@@ -490,8 +496,8 @@ Scan this code for this presentation URL
 ]
 
 .contactblock[
-.presenter[Darlan Cavalcante Moreira: [darlan@gtel.ufc.br](mailto:darlan@gtel.ufc.br)]<br>
-.home[GTEL - Wireless Telecom Research Group]<br>
-.webpage[https://www.gtel.ufc.br]<br>
+.presenter[Darlan Cavalcante Moreira: [darlan@gtel.ufc.br](mailto:darlan@gtel.ufc.br)]<br />
+.home[GTEL - Wireless Telecom Research Group]<br />
+.webpage[https://www.gtel.ufc.br]<br />
 .location[Fortaleza, Brazil]
 ]

@@ -201,3 +201,28 @@ a:active, a#active {color:#FF9700;}
 .dontanimate {
     animation-duration: 0s !important;
 }
+
+
+/* Show */
+pre, p>code {
+    position: relative;
+}
+
+pre>code:hover, p>code {
+    cursor: copy;
+}
+pre>code:hover:after{
+    position:absolute;
+    top: calc(-1em - 15px);
+    right:20px;
+    bottom:0;
+
+    background-color: rgb(230, 230, 230);
+    height: 1em;
+
+    padding: 10px 15px 10px 15px;
+    content: "Clique para copiar";
+    border-radius: 5px;
+    font-size: 75%;
+    /* box-shadow: 3px 3px gray; */
+}

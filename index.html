@@ -52,16 +52,14 @@
         <script src="js/remark-latest.min.js"></script>
 
         <!-- TODO: Add bibtex parser -->
-        <!-- TODO: Check the highlight option of remark https://github.com/gnab/remark/wiki/Markdown#line-highlighting -->
         <!-- TODO: procure por "remark template" no github que tem alguns legais -->
         <!-- TOOD: procure por remark pull-left -> veja em https://github.com/gnab/remark/issues/409 -->
+        <!-- TODO: Bom exemplo de apresentação -> http://gnab.github.io/js-workshop/#1  -->
 
         <!-- TODO: veja classes extras em https://github.com/ttskch/remarkbase -->
-        <!-- TODO: Add javascript code that show a small text on code blocks when hovered saying "click to copy" and that does that on click
-             See https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
-             See https://stackoverflow.com/questions/49110041/how-can-i-copy-pre-tag-code-into-clipboard-in-html?rq=1
-        -->
+        <!-- TODO: Adicionar código javascript para gerar table of contents -->
 
+        <script src="js/helper_funcs.js"></script>
         <script src="js/mycharts.js"></script>
         <script src="draws/draw.js"></script>
 
@@ -108,6 +106,23 @@
              var image = this;
              return generate_captioned_float(image, caption_text);
          }
+
+         function replaceTOC(firstIdx, secondIdx) {
+             let toc = document.getElementById("TOC");
+             let slideTitles = getAllSlideTitles(firstIdx, secondIdx);
+             slideTitles = slideTitles.map(x => { return "<li>X</li>".replace("X", x); }).join("\n");
+             let html = "<ol>TITLES</ol>".replace("TITLES", slideTitles);
+
+             toc.innerHTML = html;
+         }
+
+         remark.macros['toc'] = function() {
+             let start = arguments[0];
+             let end = arguments[1];
+             window.addEventListener("load", function() { replaceTOC(start, end); });
+
+             return "<div id='TOC'>TOC</div>"
+         }
         </script>
 
         <script>
@@ -145,6 +160,11 @@
              /* slideNumberFormat: function (current, total) {
               *     return 'Slide ' + current + ' of ' + total;
               * }, */
+
+             //highlightStyle: 'solarized-light',
+             //highlightStyle: 'tomorrow',
+             highlightStyle: 'atom-one-light',
+             //highlightStyle: 'default',
 
              // Enable or disable counting of incremental slides in the slide counting
              countIncrementalSlides: false
@@ -185,12 +205,22 @@
              }
          }
 
+         function addClickEventActionEveryCodeBlock() {
+             let code_blocks = document.getElementsByTagName("code");
+             for(var idx=0; idx < code_blocks.length; idx++) {
+                 let c = code_blocks[idx];
+                 //console.log(c);
+                 c.addEventListener("click", function() {copyCodeOnClick(c);});
+             }
+         }
+
          // Add any javascript function that changes the presentation here, such as changing the QR code, updating a chart, etc.
-         window.onload = function() {
+         window.addEventListener("load", function() {
              prepare_qr_code();
              prepare_location();
              update_charts("myChart");
-         }
+             addClickEventActionEveryCodeBlock();
+         });
 
          // You can use the showSlide event to call some javascript function
          // Ex: Add a "name" property to each slide where a javascriot function
@@ -219,15 +249,10 @@
 
 
         <script>
-         document.addEventListener('keypress', (event) => {
-             const keyName = event.key;
-
+         document.addEventListener('keydown', (event) => {
              if (getCurrentSlideName() === "more-animations-3") {
-                 //slideshow.pause();
                  updateBlock(event);
              }
-             //slideshow
-             //alert('keypress event\n\n' + 'key: ' + keyName);
          });
         </script>
     </body>
