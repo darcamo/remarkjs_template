@@ -22,7 +22,16 @@ function updateBlock(event) {
     const previousSlideShortcutCodes = ["ArrowUp", "ArrowLeft", "KeyK", "PageUp"];
 
     let keyName = event.code;
+    console.log(keyName);
     let horizontalShift;
+
+    if(keyName === "End") {
+        slideshow.resume();
+        slideshow.gotoLastSlide();
+    } else if(keyName === "Home") {
+        slideshow.resume();
+        slideshow.gotoFirstSlide();
+    }
 
     if (nextSlideShortcutCodes.includes(keyName)) {
         if(step === undefined) { step = -1; }

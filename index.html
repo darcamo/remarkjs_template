@@ -108,9 +108,13 @@
          }
 
          function replaceTOC(firstIdx, secondIdx) {
+             let nameToId = name => name.toLowerCase().replace(/ /g, "-");
+
              let toc = document.getElementById("TOC");
              let slideTitles = getAllSlideTitles(firstIdx, secondIdx);
-             slideTitles = slideTitles.map(x => { return "<li>X</li>".replace("X", x); }).join("\n");
+             slideTitles = slideTitles.map(x => {
+                 return "<li>X</li>".replace("X", x);
+             }).join("\n");
              let html = "<ol>TITLES</ol>".replace("TITLES", slideTitles);
 
              toc.innerHTML = html;
