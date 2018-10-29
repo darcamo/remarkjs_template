@@ -28,7 +28,9 @@ October 18, 2018
 
 ---
 
-# Agenda
+class:middle, hide-logo, hide-slide-number
+
+# .center[Agenda]
 
 ![:toc 2, 20]
 

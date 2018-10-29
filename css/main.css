@@ -21,7 +21,19 @@
      - Add a 'align-top', '\'align-middle\' or 'align-middle' class to the column
 */
 
+.toc {
+    display: table-cell;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* height: 100%; */
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+}
 
+.toc>ol {
+    column-count: 2;
+    /* margin-top: 60px; */
+}
 
 p, ul, ol {
     font-size: 24px;
