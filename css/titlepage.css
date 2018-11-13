@@ -16,7 +16,7 @@
 
 .titleblock {
     color: white;
-    background-color: var(--frame-tittle-color);
+    background-color: rgb(0,128,184, 0.8);
     padding: 10px;
     margin-bottom: 40px;
 }
@@ -27,7 +27,7 @@
 }
 
 .authorsblock {
-    background-color: var(--frame-tittle-background-color);
+    background-color: rgb(238, 238, 238, 0.8);
     padding: 1px;
 }
 
