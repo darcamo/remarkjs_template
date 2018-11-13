@@ -18,14 +18,14 @@ function copyCodeOnClick(element) {
 }
 
 // Return the titles of all slides from `firstIdx` to `secondIdx`
-function getAllSlideTitles(firstIdx, secondIdx) {
+function getAllSlideTitlesAndNumbers(firstIdx, secondIdx) {
     let arr = document.querySelectorAll(".remark-slide-content h1:first-child");
 
     let array = [];
     for(let i = 0; i < arr.length; i++) {
         let text = arr[i].textContent;
         if (array[array.length-1] !== text) {
-            array.push(text);
+            array.push([text, i]);
         }
     }
     return array.slice(firstIdx, secondIdx);

@@ -55,9 +55,13 @@
         <!-- TODO: procure por "remark template" no github que tem alguns legais -->
         <!-- TOOD: procure por remark pull-left -> veja em https://github.com/gnab/remark/issues/409 -->
         <!-- TODO: Bom exemplo de apresentação -> http://gnab.github.io/js-workshop/#1  -->
+        <!-- TODO: testar outras fonts -> Ex: Heuristica webfont -->
+        <!-- https://www.fontsquirrel.com/ -->
 
         <!-- TODO: veja classes extras em https://github.com/ttskch/remarkbase -->
         <!-- TODO: Adicionar código javascript para gerar table of contents -->
+
+        <!-- TODO: Currently the toc macro is wrong if there is any slide without an h1 first child. Idealy, the toc should be for some kind of section and not for the h1 headers -->
 
         <script src="js/helper_funcs.js"></script>
         <script src="js/mycharts.js"></script>
@@ -111,9 +115,10 @@
              let nameToId = name => name.toLowerCase().replace(/ /g, "-");
 
              let toc = document.getElementById("TOC");
-             let slideTitles = getAllSlideTitles(firstIdx, secondIdx);
-             slideTitles = slideTitles.map(x => {
-                 return "<li>X</li>".replace("X", x);
+             let slideTitlesAndNumbers = getAllSlideTitlesAndNumbers(firstIdx, secondIdx);
+             slideTitles = slideTitlesAndNumbers.map(titleAndNumber => {
+                 [title, number] = titleAndNumber;
+                 return "<li><a href='#URL'>X</a></li>".replace("X", title).replace("URL", number+1);
              }).join("\n");
              let html = "<ol>TITLES</ol>".replace("TITLES", slideTitles);
 
@@ -176,7 +181,11 @@
 
         <!-- This needs to come before you include MathJax -->
         <script src="js/configure_mathjax.js"></script>
+
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+        <!-- If you want to run your presentation offline, you need to download the MathJax -->
+        <!-- libraries, then uncomment the line below and comment out the one above.-->
+        <!-- <script "text/javascript" src="js/MathJax/MathJax.js?config=TeX-AMS_HTML,local/local"></script> -->
 
         <script type="text/javascript" src="js/qrcode.js"></script>
         <script>
