@@ -39,3 +39,9 @@ to slides are:
   - Add 'w-10, w-20, ...' class to the same element with the column class for a width proportion
   - Add a 'align-top', '\'align-middle\' or 'align-middle' class to the column
 
+
+## Debug spacing
+
+Add a `debug`, `debug-white` or `debug-black` class to a slide to help debugging
+spacing. You can also add one of the `debug-grid` or `debug-grid-16`,
+`debug-grid-8-solid` or `debug-grid-16-solid` to add a grid.
