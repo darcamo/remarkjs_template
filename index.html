@@ -98,6 +98,14 @@
              return generate_box_code(arguments[0], arguments[1], this);
          };
 
+         // This is nor really necessary, since the box macro can be used with a
+         // 'Note' label, but since it is very common we have added a macro to
+         // create a Note
+         remark.macros['note'] = function () {
+             var label = arguments[1] === undefined ? "Note" : arguments[1];
+             return generate_box_code(arguments[0], label, this);
+         };
+
          /* Note that this macro will just add a span with an id="qrcode". A
             function was added to window.onload to look for that ID and if one is
             found then a QR code will added to the span. */
@@ -228,10 +236,17 @@
 
          // Add any javascript function that changes the presentation here, such as changing the QR code, updating a chart, etc.
          window.addEventListener("load", function() {
-             prepare_qr_code();
-             prepare_location();
-             update_charts("myChart");
-             addClickEventActionEveryCodeBlock();
+             // Even though we are executing code in the "load" event of the
+             // window, directly calling the functions we want might not work
+             // because it needs to be run after other code that also runs in
+             // the load event. Therefore, we use a setTimeout to sleep for 1
+             // second before calling the functions
+             setTimeout(function(){
+                 prepare_qr_code();
+                 prepare_location();
+                 update_charts("myChart");
+                 addClickEventActionEveryCodeBlock();
+             }, 1000);
          });
 
          // You can use the showSlide event to call some javascript function

@@ -301,7 +301,7 @@ class: overlay-blend, hide-logo
 Now we have the same image as before, but we also set the background color and
 add the overlay-blend class to the slide.
 
-![:box angry, Note](The background color needs to have an opacity value greater than
+![:note angry](The background color needs to have an opacity value greater than
 zero and lower than one in order for the overlay to work)
 
 ---
