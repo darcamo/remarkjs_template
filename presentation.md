@@ -483,6 +483,12 @@ Some other elements with css are:
   > Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
   > -- <cite>Albert Einstein</cite>
 
+---
+
+# TIPs
+
+- You can get nice general pictures from specialized sites such as https://unsplash.com/
+  - Better than just googling
 
 ---
 class: middle, center, hide-slide-number, hide-logo
