@@ -7,7 +7,8 @@ Check it's documentation for basic usage.
 This template configures remarkjs to use an external markdown file
 `presentation.md`. It also add a few extra css classes, some that can be applied
 to a slide, some that can be applied to divs and some that can be applied to
-spans. Check the `presentation.md` for the usage.
+spans. Check `presentation.md`, which illustrates the usage of the created
+classes. It can be seen [here](https://darcamo.github.io/remarkjs_template).
 
 Below you can find a list of the classes added by this template.
 

@@ -500,7 +500,7 @@ class: middle, center, hide-slide-number, hide-logo
 .animated.fadeIn.delay-2s[
 Scan this code for this presentation URL
 
-![:qrcode](https://www.google.com)
+![:qrcode](https://darcamo.github.io/remarkjs_template)
 ]
 
 .contactblock[
