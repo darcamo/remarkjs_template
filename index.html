@@ -190,7 +190,9 @@
         <!-- This needs to come before you include MathJax -->
         <script src="js/configure_mathjax.js"></script>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_HTML"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
         <!-- If you want to run your presentation offline, you need to download the MathJax -->
         <!-- libraries, then uncomment the line below and comment out the one above.-->
         <!-- <script "text/javascript" src="js/MathJax/MathJax.js?config=TeX-AMS_HTML,local/local"></script> -->
@@ -246,6 +248,9 @@
                  prepare_location();
                  update_charts("myChart");
                  addClickEventActionEveryCodeBlock();
+                 // Manually ask mathjax to render equations when we are sure
+                 // remarkjs has already made what it needed to do
+                 MathJax.typeset();  /*  */
              }, 1000);
          });
 
