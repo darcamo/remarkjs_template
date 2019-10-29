@@ -73,3 +73,4 @@ The available macros are
   - The second argument is the note label
 - `qrcode`: has no argument but must have content containing the text to convert
   to a QR code. The content usually is just a URL.
+- `today`: has no arguments and no content. It is simply replaced by today's date.

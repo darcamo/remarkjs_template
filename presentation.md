@@ -18,7 +18,7 @@ name: title-slide
 
 Some Text Some Text Some Text
 
-October 18, 2018
+![:today]
 ]
 
 .footnote[Created with [{Remark.js}](http://remarkjs.com/) using

@@ -139,6 +139,11 @@
              window.addEventListener("load", function() { replaceTOC(start, end); });
              return "<div id='TOC' class='toc'>TOC</div>"
          }
+
+         remark.macros['today'] = function() {
+             let currentTime = new Date();
+             return currentTime.toLocaleString("default", {month:"long"}) + " " + currentTime.getDate() + ", " + currentTime.getFullYear();
+         }
         </script>
 
         <script>
