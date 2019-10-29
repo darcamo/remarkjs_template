@@ -1,5 +1,11 @@
+# Presentation about <add subject here>
 
-# A remarkjs template
+Add description here.
+
+See this presentation in [here](<url where the presentation is served>).
+
+
+# Presentation Template
 
 This presentation template uses the [remarkjs](https://remarkjs.com/) framework.
 Check it's documentation for basic usage.

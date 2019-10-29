@@ -12,8 +12,7 @@ name: title-slide
 ]
 
 .authorsblock[
-Carlos Silva, Igor Guerreiro, Tarcisio Maciel, .presenter[Rodrigo Cavalcanti], Daniel
-Araújo, and Hugo Costa Neto
+.presenter[Author 1], Author 2, Author 3
 
 ![logo](figs/logo.svg)
 
