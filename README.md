@@ -52,3 +52,24 @@ to slides are:
 Add a `debug`, `debug-white` or `debug-black` class to a slide to help debugging
 spacing. You can also add one of the `debug-grid` or `debug-grid-16`,
 `debug-grid-8-solid` or `debug-grid-16-solid` to add a grid.
+
+
+## Macros
+
+Some remarkjs macros are defined for common things. They are used as 
+`![macroname: arg1, arg2, ...]` or `![macroname: arg1, arg2, ...](content)`.
+The available macros are
+
+- `box`: receives one or two arguments and must have content.
+  - The first argument is a class for the box color (moody, happy, angry, or
+    anything else you defined in css.
+  - The second argument is an optional box label
+- `toc`: receives two arguments corresponding to the start/end indexes and has
+  no content.
+- `captionedfigure`: receives one argument corresponding to the caption and has content (the URL of the image)
+- `note`: Receives one or two arguments and must have content
+  - The note is just a box with a default "Note" label
+  - the first argument is a class for the box color (same as the `box` macro)
+  - The second argument is the note label
+- `qrcode`: has no argument but must have content containing the text to convert
+  to a QR code. The content usually is just a URL.
