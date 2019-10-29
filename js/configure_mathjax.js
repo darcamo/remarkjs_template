@@ -2,6 +2,7 @@
 
 window.MathJax = {
     tex: {
+        inlineMath: [['\\$', '\\$']],
         macros: {
             // New Operators
             diag: "{\\mathop{\\rm diag}\\nolimits}",
@@ -114,21 +115,34 @@ window.MathJax = {
             bbX: "\\mathbb{X}",
             bbY: "\\mathbb{Y}",
             bbZ: "\\mathbb{Z}",
-            // Others
-            vtgamma: "\\boldsymbol{\\gamma}",
-            vtalpha: "\\boldsymbol{\\alpha}",
-            vtbeta: "\\boldsymbol{\\beta}",
-            vtrho: "\\boldsymbol{\\rho}",
-            vtgamma: "\\boldsymbol{\\gamma}",
+            // Others Vectors
             vtAlpha: "\\boldsymbol{\\alpha}",
+            vtBeta: "\\boldsymbol{\\beta}",
+            vtGamma: "\\boldsymbol{\\gamma}",
+            vtRho: "\\boldsymbol{\\rho}",
             vtEta: "\\boldsymbol{\\eta}",
             vtMu: "\\boldsymbol{\\mu}",
             vtNu: "\\boldsymbol{\\nu}",
-            vtOne: "\\mathbf{1}",
             vtSigma: "\\boldsymbol{\\sigma}",
             vtTau: "\\boldsymbol{\\tau}",
+            vtTheta: "\\boldsymbol{\\theta}",
+            vtLambda: "\\boldsymbol{\\lambda}",
+            vtOne: "\\mathbf{1}",
             vtZero: "\\boldsymbol{0}",
-            vtLambda: "\\boldsymbol{\\lambda}"
+            // Other matrices
+            mtAlpha: "\\boldsymbol{\\Alpha}",
+            mtBeta: "\\boldsymbol{\\Beta}",
+            mtGamma: "\\boldsymbol{\\Gamma}",
+            mtRho: "\\boldsymbol{\\Rho}",
+            mtEta: "\\boldsymbol{\\Eta}",
+            mtMu: "\\boldsymbol{\\Mu}",
+            mtNu: "\\boldsymbol{\\Nu}",
+            mtSigma: "\\boldsymbol{\\Sigma}",
+            mtTau: "\\boldsymbol{\\Tau}",
+            mtTheta: "\\boldsymbol{\\Theta}",
+            mtLambda: "\\boldsymbol{\\Lambda}",
+            mtOne: "\\mathbf{1}",
+            mtZero: "\\boldsymbol{0}"
         }
     }
 };

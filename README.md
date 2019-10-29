@@ -74,3 +74,21 @@ The available macros are
 - `qrcode`: has no argument but must have content containing the text to convert
   to a QR code. The content usually is just a URL.
 - `today`: has no arguments and no content. It is simply replaced by today's date.
+
+
+## Mathjax
+
+Mathematical equations can be typeset using LaTeX notation and are rendered by
+[MathJax](http://docs.mathjax.org/). For display equations use two dollar signs
+as delimiters like in LaTeX. For inline equations use `\$` as delimiter. If you
+want to change the inline delimiter just modify the `js/configure_mathjax.js`
+file.
+
+Some LaTeX macros are defined for easier typing. For instance, a common notation
+is using boldface lower case for vectors and boldcase uppercase for matrices. A
+series of `vtX` and `mtX` macros are defined for each letter in the alphabet (as
+well as some Greek letters). For instance, instead of typing `\mathbf{y}` to
+write a `y` vector, we can use `\vtY`. a a `Y` matrix we can use `\mtY`. Similar
+macros are defined for sets (which are written as `\stX` and replaced by
+`\mathcal{X}`) and blackboard letters (which are written as `\bbX` and replaced
+by `\mathbb{X}`).
