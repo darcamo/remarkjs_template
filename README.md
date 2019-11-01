@@ -56,7 +56,7 @@ spacing. You can also add one of the `debug-grid` or `debug-grid-16`,
 
 ## Macros
 
-Some remarkjs macros are defined for common things. They are used as 
+Some remarkjs macros are defined for common things. They are used as
 `![macroname: arg1, arg2, ...]` or `![macroname: arg1, arg2, ...](content)`.
 The available macros are
 
@@ -92,3 +92,23 @@ write a `y` vector, we can use `\vtY`. a a `Y` matrix we can use `\mtY`. Similar
 macros are defined for sets (which are written as `\stX` and replaced by
 `\mathcal{X}`) and blackboard letters (which are written as `\bbX` and replaced
 by `\mathbb{X}`).
+
+
+## Creating figures programmatically
+
+- Using TikZ in a browser like MathJax
+  - See [this link](https://stackoverflow.com/questions/50432295/using-tikz-in-a-browser-like-mathjax)
+  - It works in your machine, but it won't work in github pages, for instance
+- MathJax and d3
+  - See [this link](http://bl.ocks.org/larsenmtl/86077bddc91c3de8d3db6a53216b2f47)
+- Convert a PDF created with tikz into an SVG file
+  - This will always work
+- Using a webservice that converts tex code into an image and gives you the link to use
+  - See [this link](http://presheaf.com/)
+  - It is basically the same as you converting yourself from a PDF generated
+    with tikz into SVG
+- Other people also want some way to create draws that can use mathjax for equations
+  - See
+- [mathbox](https://gitgud.io/unconed/1) seems like a good candidate to replace tikz and allows rendering the equations
+
+TODO: Investigate [jsxgraph](https://jsxgraph.uni-bayreuth.de/wp/)
