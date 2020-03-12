@@ -41,6 +41,8 @@
         <link href="css/blockquote.css" rel="stylesheet"/>
         <link href="css/kbd.css" rel="stylesheet"/>
 
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.0.min.js"></script>
+
         <!-- Experimental CSS that I'am still deciding on keeping in the template -->
         <!-- https://github.com/ttskch/remarkbase -->
         <link href="css/experimental.css" rel="stylesheet"/>
@@ -252,6 +254,7 @@
                  prepare_qr_code();
                  prepare_location();
                  update_charts("myChart");
+                 draw_bokeh_plot();
                  addClickEventActionEveryCodeBlock();
                  // Manually ask mathjax to render equations when we are sure
                  // remarkjs has already made what it needed to do
