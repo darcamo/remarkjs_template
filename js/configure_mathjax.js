@@ -1,10 +1,13 @@
-"use strict";
-
 window.MathJax = {
-    tex: {
-        inlineMath: [['\\$', '\\$']],
-        macros: {
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    },
+    TeX: {
+        Macros: {
             // New Operators
+            E: "\\mathbb{E}",
+            Mod: ["\\left \\vert #1 \\right \\vert", 1],
             diag: "{\\mathop{\\rm diag}\\nolimits}",
             rank: "{\\mathop{\\rm rank}\\nolimits}",
             // Matrices
@@ -22,7 +25,7 @@ window.MathJax = {
             mtL: "\\mathbf{L}",
             mtM: "\\mathbf{M}",
             mtN: "\\mathbf{N}",
-            mtO: "\\mathbf{P}",
+            mtO: "\\mathbf{O}",
             mtP: "\\mathbf{P}",
             mtQ: "\\mathbf{Q}",
             mtR: "\\mathbf{R}",
@@ -49,7 +52,7 @@ window.MathJax = {
             vtL: "\\mathbf{l}",
             vtM: "\\mathbf{m}",
             vtN: "\\mathbf{n}",
-            vtO: "\\mathbf{p}",
+            vtO: "\\mathbf{o}",
             vtP: "\\mathbf{p}",
             vtQ: "\\mathbf{q}",
             vtR: "\\mathbf{r}",
@@ -76,7 +79,7 @@ window.MathJax = {
             stL: "\\mathcal{L}",
             stM: "\\mathcal{M}",
             stN: "\\mathcal{N}",
-            stO: "\\mathcal{P}",
+            stO: "\\mathcal{O}",
             stP: "\\mathcal{P}",
             stQ: "\\mathcal{Q}",
             stR: "\\mathcal{R}",
@@ -88,6 +91,33 @@ window.MathJax = {
             stX: "\\mathcal{X}",
             stY: "\\mathcal{Y}",
             stZ: "\\mathcal{Z}",
+            // Calligraphic
+            calA: "\\mathcal{A}",
+            calB: "\\mathcal{B}",
+            calC: "\\mathcal{C}",
+            calD: "\\mathcal{D}",
+            calE: "\\mathcal{E}",
+            calF: "\\mathcal{F}",
+            calG: "\\mathcal{G}",
+            calH: "\\mathcal{H}",
+            calI: "\\mathcal{I}",
+            calJ: "\\mathcal{J}",
+            calK: "\\mathcal{K}",
+            calL: "\\mathcal{L}",
+            calM: "\\mathcal{M}",
+            calN: "\\mathcal{N}",
+            calO: "\\mathcal{O}",
+            calP: "\\mathcal{P}",
+            calQ: "\\mathcal{Q}",
+            calR: "\\mathcal{R}",
+            calS: "\\mathcal{S}",
+            calT: "\\mathcal{T}",
+            calU: "\\mathcal{U}",
+            calV: "\\mathcal{V}",
+            calW: "\\mathcal{W}",
+            calX: "\\mathcal{X}",
+            calY: "\\mathcal{Y}",
+            calZ: "\\mathcal{Z}",
             // Blackboard
             bbA: "\\mathbb{A}",
             bbB: "\\mathbb{B}",
@@ -103,7 +133,7 @@ window.MathJax = {
             bbL: "\\mathbb{L}",
             bbM: "\\mathbb{M}",
             bbN: "\\mathbb{N}",
-            bbO: "\\mathbb{P}",
+            bbO: "\\mathbb{O}",
             bbP: "\\mathbb{P}",
             bbQ: "\\mathbb{Q}",
             bbR: "\\mathbb{R}",
@@ -118,6 +148,7 @@ window.MathJax = {
             // Others Vectors
             vtAlpha: "\\boldsymbol{\\alpha}",
             vtBeta: "\\boldsymbol{\\beta}",
+            vtEpsilon: "\\boldsymbol{\\epsilon}",
             vtGamma: "\\boldsymbol{\\gamma}",
             vtRho: "\\boldsymbol{\\rho}",
             vtEta: "\\boldsymbol{\\eta}",
@@ -141,6 +172,7 @@ window.MathJax = {
             mtTau: "\\boldsymbol{\\Tau}",
             mtTheta: "\\boldsymbol{\\Theta}",
             mtLambda: "\\boldsymbol{\\Lambda}",
+            mtPhi: "\\boldsymbol{\\Phi}",
             mtOne: "\\mathbf{1}",
             mtZero: "\\boldsymbol{0}"
         }
